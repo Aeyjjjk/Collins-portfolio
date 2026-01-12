@@ -21,7 +21,7 @@ export const heroData = {
   name: "Echezonachi Collins", // TODO: Replace with your name
   title: "Engineer & Developer", // TODO: Replace with your title
   tagline: "Where engineering meets innovation.", // TODO: Your tagline
-  profileImage: "/placeholder.svg", // TODO: Replace with "/images/profile.jpg"
+  profileImage: "/images/profile.jpg", // TODO: Replace with "/images/profile.jpg"
   skills: [
     "Embedded Systems",
     "Automation",
@@ -34,8 +34,8 @@ export const heroData = {
     "Kali Linux",
   ],
   socialLinks: {
-    whatsapp: "https://wa.me/yourphonenumber", // TODO: Add your WhatsApp number
-    linkedin: "https://linkedin.com/in/yourusername", // TODO: Add your LinkedIn
+    whatsapp: "https://wa.me/2349064574106", // TODO: Add your WhatsApp number
+    linkedin: "https://www.linkedin.com/in/echezonachi-u-568069293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", // TODO: Add your LinkedIn
   },
   cvLink: "/cv.pdf", // TODO: Place your CV in /public/cv.pdf
 };

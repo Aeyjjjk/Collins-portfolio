@@ -39,7 +39,7 @@ export const Hero = () => {
               </div>
 
               {/* Profile image container */}
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-xl z-10">
+              <div className="relative w-32 h-52 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-xl z-10">
                 <img 
                   src={heroData.profileImage}
                   alt={heroData.name}
@@ -47,7 +47,7 @@ export const Hero = () => {
                 />
               </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none z-10"></div>
-              <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success rounded-full border-4 border-background z-20"></div>
+              <div className="absolute -bottom-1 -right-1  w-6 h-6 bg-success rounded-full border-4 border-background z-20"></div>
             </div>
           </div>
 

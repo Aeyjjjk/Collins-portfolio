@@ -13,24 +13,24 @@ export default function ProjectDetail() {
   // Project data (in real app, this would come from API or context)
   const projects: Record<string, any> = {
     "gas-robot": {
-      title: "Gas Detecting Robot",
-      year: "2023",
+      title: "Autonomous Gas Detector and Obstacle Avoidance Robot",
+      year: "2025",
       role: "Hardware Designer & Embedded Systems Developer",
       description: "An autonomous mobile robot designed to detect and monitor hazardous gas levels in industrial environments. Features real-time data transmission and alert systems.",
       fullDescription: "This advanced robotic system combines embedded systems, sensor technology, and wireless communication to create a comprehensive gas monitoring solution. The robot autonomously navigates through industrial facilities, continuously monitoring air quality and detecting dangerous gas concentrations. When hazardous levels are detected, it immediately alerts safety personnel and logs data for analysis.",
       tech: ["Arduino", "Gas Sensors", "Wireless Communication", "Motor Control", "C++"],
       category: "Robotics & IoT",
-      image: "🤖",
+      image: "C:/Users/HP/Documents/GitHub/Collins-portfolio/public/images/profile.jpg",
       features: [
         "Autonomous navigation system",
         "Multi-gas detection capability (CO, CO2, LPG, Methane)",
-        "Real-time wireless data transmission",
+        "Real-time display of current system output on an LCD screen",
         "Automatic alert system with threshold monitoring",
-        "Data logging and analytics",
+        "Obstacle Avoidance System",
         "Rechargeable battery system with long runtime",
       ],
       goals: "Create a cost-effective, reliable solution for continuous gas monitoring in industrial environments where human presence may be dangerous or impractical.",
-      outcomes: "Successfully deployed prototype demonstrating 95% detection accuracy, 6-hour battery life, and reliable operation in challenging industrial conditions.",
+      outcomes: "Successfully deployed prototype demonstrating 95% detection accuracy, 3-hour battery life, and reliable operation in challenging industrial conditions.",
       github: "https://github.com",
     },
     "rfid-system": {
@@ -145,7 +145,7 @@ export default function ProjectDetail() {
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
           <Button onClick={() => navigate("/")} className="mt-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
+            Back
           </Button>
         </div>
         <Footer />
@@ -165,7 +165,7 @@ export default function ProjectDetail() {
             className="mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Projects
+            Back
           </Button>
 
           {/* Hero Section */}
@@ -265,10 +265,10 @@ export default function ProjectDetail() {
                     View on GitHub
                   </a>
                 </Button>
-                <Button variant="outline" className="border-2">
+                {/* <Button variant="outline" className="border-2">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
-                </Button>
+                </Button> */}
               </div>
             )}
           </div>
