@@ -90,10 +90,10 @@ export const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
-            onClick={() => scrollToSection("#hero")}
+            onClick={() => scrollToSection("#about")}
             className="text-xl font-bold text-gradient hover:scale-105 transition-all duration-300 hover:opacity-90"
           >
-            Echezonachi Collins
+            Echezonachi
           </button>
 
           {/* Desktop Navigation */}
@@ -164,8 +164,8 @@ export const Navbar = () => {
                     onClick={() => scrollToSection(item.href)}
                     className={`font-medium py-3 px-4 text-left rounded-lg transition-all duration-300 ${
                       isActive
-                        ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                        : 'text-foreground/70 hover:text-foreground hover:bg-accent'
+                        ? 'bg-primary/10 text-primary border-l-6 border-primary'
+                        : 'text-foreground/70 hover:text-foreground hover:bg-primary'
                     }`}
                   >
                     {item.name}

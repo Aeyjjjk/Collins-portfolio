@@ -1,10 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/Navbar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -14,13 +14,13 @@ export default function ProjectDetail() {
   const projects: Record<string, any> = {
     "gas-robot": {
       title: "Autonomous Gas Detector and Obstacle Avoidance Robot",
-      year: "2025",
+      year: "2024",
       role: "Hardware Designer & Embedded Systems Developer",
       description: "An autonomous mobile robot designed to detect and monitor hazardous gas levels in industrial environments. Features real-time data transmission and alert systems.",
-      fullDescription: "This advanced robotic system combines embedded systems, sensor technology, and wireless communication to create a comprehensive gas monitoring solution. The robot autonomously navigates through industrial facilities, continuously monitoring air quality and detecting dangerous gas concentrations. When hazardous levels are detected, it immediately alerts safety personnel and logs data for analysis.",
-      tech: ["Arduino", "Gas Sensors", "Wireless Communication", "Motor Control", "C++"],
-      category: "Robotics & IoT",
-      image: "C:/Users/HP/Documents/GitHub/Collins-portfolio/public/images/profile.jpg",
+      fullDescription: "This advanced robotic system combines embedded systems with sensor technology to create a comprehensive gas monitoring solution. The robot autonomously navigates through industrial facilities while continuously monitoring air quality and detecting dangerous gas concentrations. When hazardous levels are detected, the system displays real-time readings on an LCD screen, triggers an audible alarm, and autonomously moves the robot away from danger zones while avoiding obstacles.",
+      tech: ["Arduino", "Gas Sensors", "Ultrasonic Sensor", "L298N Motor Controller", "C++", "DC-DC Buck Converter", "Servo Motor"],
+      category: "Robotics",
+      image: "/images/project-more/gas-robot.jpg",
       features: [
         "Autonomous navigation system",
         "Multi-gas detection capability (CO, CO2, LPG, Methane)",
@@ -31,12 +31,12 @@ export default function ProjectDetail() {
       ],
       goals: "Create a cost-effective, reliable solution for continuous gas monitoring in industrial environments where human presence may be dangerous or impractical.",
       outcomes: "Successfully deployed prototype demonstrating 95% detection accuracy, 3-hour battery life, and reliable operation in challenging industrial conditions.",
-      github: "https://github.com",
+      github: "https://github.com/Aeyjjjk/autonomous-robot",
     },
     "rfid-system": {
       title: "RFID Attendance System",
       year: "2023",
-      role: "Full-Stack Developer & Embedded Systems Engineer",
+      role: "IOT Integration & Embedded Systems Engineer",
       description: "Smart attendance tracking system using RFID technology for automated student/employee check-in with real-time database integration.",
       fullDescription: "A comprehensive attendance management solution that eliminates manual record-keeping through RFID technology. The system provides instant verification, reduces time spent on attendance, and offers detailed analytics and reporting capabilities.",
       tech: ["RFID Reader", "Microcontroller", "Database", "LCD Display", "Buzzer"],
@@ -192,18 +192,11 @@ export default function ProjectDetail() {
             {/* Project Image/Banner */}
             <Card className="aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 flex items-center justify-center mb-12 border-2 overflow-hidden relative">
               <img 
-                src={`https://images.unsplash.com/photo-${
-                  id === 'gas-robot' ? '1485827404703-89b55fcc595e' :
-                  id === 'rfid-system' ? '1558494949-ef010cbdcc31' :
-                  id === 'flutter-apps' ? '1512941937669-90a1b58e7e9c' :
-                  id === 'drone-design' ? '1473968512647-3e447244af8f' :
-                  id === 'plc-systems' ? '1581092918056-0c4c3acd3789' :
-                  '1517694712202-14dd9538aa97'
-                }?w=1200&h=600&fit=crop`}
-                alt={project.title}
-                className="w-full h-full object-cover"
+               src={project.image}
+               alt={project.title}
+               className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 pointer-events-none" />
             </Card>
 
             {/* Tech Stack */}
@@ -275,7 +268,7 @@ export default function ProjectDetail() {
         </div>
       </div>
 
-      <Footer />
+      
     </div>
   );
 }

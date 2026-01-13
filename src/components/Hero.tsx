@@ -71,7 +71,7 @@ export const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Button 
+            {/* <Button 
               size="lg" 
               onClick={() => {
                 const element = document.querySelector("#contact");
@@ -82,7 +82,7 @@ export const Hero = () => {
               className="rounded-full gradient-tech text-white font-semibold px-8 glow-primary"
             >
               Hire Me
-            </Button>
+            </Button> */}
             <Button 
               size="lg" 
               onClick={scrollToProjects}

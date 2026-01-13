@@ -22,6 +22,7 @@ export const heroData = {
   title: "Engineer & Developer", // TODO: Replace with your title
   tagline: "Where engineering meets innovation.", // TODO: Your tagline
   profileImage: "/images/profile.jpg", // TODO: Replace with "/images/profile.jpg"
+  heroBackgroundImage: "/images/hero-bg.jpg",
   skills: [
     "Embedded Systems",
     "Automation",
@@ -34,10 +35,10 @@ export const heroData = {
     "Kali Linux",
   ],
   socialLinks: {
-    whatsapp: "https://wa.me/2349064574106", // TODO: Add your WhatsApp number
-    linkedin: "https://www.linkedin.com/in/echezonachi-u-568069293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", // TODO: Add your LinkedIn
+    whatsapp: "https://wa.me/2349064574106", 
+    linkedin: "https://www.linkedin.com/in/echezonachi-u-568069293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
-  cvLink: "/cv.pdf", // TODO: Place your CV in /public/cv.pdf
+  cvLink: "/images/gallery/EchezonachiCollins_cv.pdf",
 };
 
 // ===========================================
@@ -47,9 +48,9 @@ export const projectsData = [
   {
     id: "gas-robot",
     title: "Gas Detecting Robot",
-    description: "Autonomous mobile robot for detecting and monitoring hazardous gas levels in industrial environments.",
-    tech: ["Arduino", "Gas Sensors", "Wireless", "C++"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/gas-robot.jpg"
+    description: "Autonomous robot for detecting and monitoring hazardous gas levels in industrial environments.",
+    tech: ["Arduino", "Gas Sensors", "Buzzer", "C++"],
+    image: "/images/project-more/robot-FV.jpg",
   },
   {
     id: "rfid-system",
@@ -63,7 +64,7 @@ export const projectsData = [
     title: "Flutter Mobile Apps",
     description: "Cross-platform mobile applications with modern UI/UX and real-time data sync.",
     tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/flutter-apps.jpg"
+    image: "/images/project-more/flutter-app.jpg",
   },
   {
     id: "drone-design",
@@ -93,12 +94,12 @@ export const projectsData = [
 // ===========================================
 export const galleryData = [
   {
-    title: "Smart Home Controller",
-    category: "IoT",
-    description: "Home automation system with sensors",
-    image: "/placeholder.svg", // TODO: Replace with "/images/gallery/smart-home.jpg"
+    title: "Graphics  ",
+    category: "Design",
+    description: "Graphics Designed for some clients",
+    image: "/images/gallery/graphic1.jpg",
     size: "large" as const,
-    tools: ["ESP32", "MQTT", "Node-RED", "React"],
+    tools: ["Canva", "PhotoShop", "Pixellab",],
   },
   {
     title: "Industrial PLC System",
@@ -109,12 +110,12 @@ export const galleryData = [
     tools: ["Siemens S7", "TIA Portal", "HMI"],
   },
   {
-    title: "Drone Flight Controller",
-    category: "Robotics",
-    description: "Custom drone control system",
-    image: "/placeholder.svg", // TODO: Replace with "/images/gallery/drone-controller.jpg"
+    title: "Graphics",
+    category: "Design",
+    description: "More Designs",
+    image: "/images/gallery/graphic2.jpg", // TODO: Replace with "/images/gallery/drone-controller.jpg"
     size: "medium" as const,
-    tools: ["STM32", "C++", "PID Control", "PCB Design"],
+    tools: ["Canva", "PhotoShop", "Pixellab"],
   },
   {
     title: "Mobile App Interface",
@@ -125,12 +126,12 @@ export const galleryData = [
     tools: ["Flutter", "Dart", "Firebase", "REST API"],
   },
   {
-    title: "SCADA Dashboard",
+    title: "HMI",
     category: "Industrial",
-    description: "Real-time monitoring system",
-    image: "/placeholder.svg", // TODO: Replace with "/images/gallery/scada.jpg"
+    description: "HMI screen for the Production Separator of a Project",
+    image: "/images/gallery/hmi1.PNG", // TODO: Replace with "/images/gallery/scada.jpg"
     size: "large" as const,
-    tools: ["WinCC", "Modbus", "OPC UA", "SQL"],
+    tools: ["VM", "FactoryTalk"],
   },
   {
     title: "Sensor Network",
@@ -160,7 +161,7 @@ export const galleryData = [
     title: "Robotic Arm Control",
     category: "Robotics",
     description: "6-axis robotic manipulator",
-    image: "/placeholder.svg", // TODO: Replace with "/images/gallery/robotic-arm.jpg"
+    image: "/images/gallery/graphic.jpg", // TODO: Replace with "/images/gallery/robotic-arm.jpg"
     size: "medium" as const,
     tools: ["ROS", "Inverse Kinematics", "Servo Motors"],
   },
