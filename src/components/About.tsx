@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Code2, Cpu, Wrench, Shield, Layers, Workflow } from "lucide-react";
+import { Code2, Cpu, Wrench, Shield, Layers, Microchip, Bot, Workflow, AppWindow,  ShieldCheck, X } from "lucide-react";
 
 export const About = () => {
+  const [activeStrength, setActiveStrength] = useState<any>(null);
+
   const strengths = [
     {
-      icon: Cpu,
+      icon: Microchip,
       title: "Embedded Systems",
       summary:
         "Developing microcontroller-based systems with a focus on stability, hardware integration, and real-world operation.",
@@ -15,7 +18,7 @@ export const About = () => {
       ],
     },
     {
-      icon: Wrench,
+      icon:  Bot,
       title: "Automation & Robotics",
       summary:
         "Building control and automation systems for industrial and robotic applications.",
@@ -26,18 +29,18 @@ export const About = () => {
       ],
     },
     {
-      icon: Code2,
+      icon: AppWindow,
       title: "Application Development",
       summary:
-        "Creating software applications that connect users with devices and systems.",
+        "Creating software applications.",
       details: [
-        "Flutter-based mobile application development",
-        "Java application development and system logic",
-        "Integration with embedded devices, IoT platforms, and backends",
+      "Cross-platform mobile development using Flutter with clean UI architecture",
+      "State management, API consumption, and real-time data handling",
+      "Tight integration with embedded systems, IoT devices, and automation backends",
       ],
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Cybersecurity",
       summary:
         "Applying security awareness across systems, networks, and applications.",
@@ -48,38 +51,13 @@ export const About = () => {
       ],
     },
   ];
-  
-
-  const tools = [
-    "Flutter",
-    "Java",
-    "PLC Programming",
-    "HMI Design",
-    "Arduino",
-    "ESP8266 / ESP32",
-    "Raspberry Pi",
-    "Linux",
-    "Kali Linux",
-    "Sensors & Modules",
-  ];
 
   return (
-    <section id="about" className="py-24 bg-card/50">
+    <section id="about" className="py-24 bg-card/50 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto space-y-20">
 
-          {/* ===== Intro ===== */}
-          <div className="text-center max-w-3xl mx-auto animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-gradient">Me</span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I work at the intersection of hardware and software, building systems that combine
-              embedded electronics, automation, and application-level control for real-world use.
-            </p>
-          </div>
-
-          {/* ===== Core Expertise ===== */}
+         
           <div>
             <h3 className="text-2xl font-bold mb-8 text-center">
               Core Expertise
@@ -89,92 +67,69 @@ export const About = () => {
               {strengths.map((strength, index) => (
                 <Card
                   key={index}
-                  className="p-6 bg-card border border-border/40 hover:border-primary/40 hover:-translate-y-1 transition-all duration-500"
+                  onClick={() => setActiveStrength(strength)}
+                  className="p-6 bg-card border border-border/40 cursor-pointer
+                             hover:border-primary/40 hover:-translate-y-1
+                             transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     <strength.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h4 className="text-lg font-semibold mb-2">
+                  <h4 className="text-lg font-semibold">
                     {strength.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {strength.description}
-                  </p>
                 </Card>
               ))}
             </div>
           </div>
-
-          {/* ===== How I Work ===== */}
-          <Card className="p-10 bg-gradient-to-br from-card to-card/60 border border-border/40">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Workflow className="h-6 w-6 text-primary" />
-                  How I Work
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  My approach focuses on understanding system requirements first, then translating
-                  them into practical hardware designs, control logic, and software interfaces.
-                  I value reliability, clarity, and maintainability in every system I build.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Layers className="h-6 w-6 text-primary" />
-                  System Thinking
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  I treat projects as complete systems — from sensors and controllers to user
-                  interfaces and security considerations — ensuring all components work together
-                  efficiently.
-                </p>
-              </div>
-
-            </div>
-          </Card>
-
-          {/* ===== Tools & Technologies ===== */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-6">
-              Tools & Technologies
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {tools.map((tool, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 text-sm rounded-full border border-border/50 bg-card hover:border-primary/40 transition"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* ===== Professional Background ===== */}
-          <Card className="p-10 border border-border/40 bg-card">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <h3 className="text-2xl font-bold text-center">
-                Professional Background
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                I am a multidisciplinary engineer with a background in embedded systems, automation,
-                and hardware engineering. My experience includes working with PLC and HMI systems,
-                industrial automation, IoT-based solutions, and robotic platforms.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Alongside hardware development, I build mobile applications using Flutter and Java,
-                often integrating them with embedded devices and backend services. I also maintain
-                practical exposure to cybersecurity concepts, using Kali Linux for security testing
-                and system analysis.
-              </p>
-            </div>
-          </Card>
-
         </div>
       </div>
+
+     
+      {activeStrength && (
+        <div
+          onClick={() => setActiveStrength(null)}
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm
+                     flex items-center justify-center px-4"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-lg w-full bg-card border border-border/40
+                       rounded-2xl p-6 relative
+                       animate-in fade-in zoom-in duration-200"
+          >
+          
+            <button
+              onClick={() => setActiveStrength(null)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-primary"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <activeStrength.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h4 className="text-xl font-bold">
+                {activeStrength.title}
+              </h4>
+            </div>
+
+            <p className="text-muted-foreground mb-4">
+              {activeStrength.summary}
+            </p>
+
+            <ul className="space-y-2 text-sm">
+              {activeStrength.details.map((item: string, i: number) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-primary">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

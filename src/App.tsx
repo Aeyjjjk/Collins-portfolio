@@ -9,6 +9,8 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import { Blog } from "./components/Blog";
+import { BlogPost } from "./pages/blog/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+
             {}
             <Route path="*" element={<NotFound />} />
           </Routes>
