@@ -5,7 +5,12 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export const Skills = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+
   const [animatedValues, setAnimatedValues] = useState<{ [key: string]: number }>({});
+  const [triggerKey, setTriggerKey] = useState(0); // ✅ NEW
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+const [shakeCard, setShakeCard] = useState<number | null>(null);
+
 
   const skillCategories = [
     {
@@ -55,36 +60,96 @@ export const Skills = () => {
     },
   ];
 
+  // ✅ REUSABLE animation runner
+  const runAnimation = (cardIndex?: number) => {
+    setAnimatedValues(prev => {
+      const filtered = { ...prev };
+      if (cardIndex !== undefined) {
+        Object.keys(filtered).forEach(key => {
+          if (key.startsWith(`${cardIndex}-`)) {
+            delete filtered[key];
+          }
+        });
+      }
+      return filtered;
+    });
+  
+    skillCategories.forEach((category, catIndex) => {
+      if (cardIndex !== undefined && catIndex !== cardIndex) return;
+  
+      category.skills.forEach((skill, skillIndex) => {
+        const key = `${catIndex}-${skillIndex}`;
+        let currentValue = 0;
+        const increment = skill.level / 45;
+        const delay = skillIndex * 120;
+  
+        setTimeout(() => {
+          const interval = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= skill.level) {
+              currentValue = skill.level;
+              clearInterval(interval);
+            }
+            setAnimatedValues(prev => ({
+              ...prev,
+              [key]: Math.round(currentValue),
+            }));
+          }, 18);
+        }, delay);
+      });
+    });
+  };
+  
+  const handleCardClick = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    setActiveCard(index);
+    setShakeCard(index);
+    runAnimation(index);
+    playClickSound();
+
+  
+    // Remove shake after animation
+    setTimeout(() => setShakeCard(null), 500);
+  
+    // Ripple effect
+    const card = e.currentTarget;
+    const ripple = document.createElement("span");
+    const size = Math.max(card.clientWidth, card.clientHeight);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.nativeEvent.offsetX - size / 2}px`;
+    ripple.style.top = `${e.nativeEvent.offsetY - size / 2}px`;
+    ripple.className = "ripple";
+  
+    card.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  };
+
+  const playClickSound = () => {
+    const audio = new Audio("/sounds/FAVE-Intentions-A-COLORS-SHOW-(TrendyBeatz.com).mp3");
+    audio.volume = 0.25;
+    audio.play().catch(() => {});
+  };
+  
+  
+
+  // 🔁 Run on scroll OR manual trigger
   useEffect(() => {
     if (isVisible) {
-      skillCategories.forEach((category, catIndex) => {
-        category.skills.forEach((skill, skillIndex) => {
-          const key = `${catIndex}-${skillIndex}`;
-          let currentValue = 0;
-          const increment = skill.level / 50;
-          const delay = (catIndex * 3 + skillIndex) * 100;
-
-          setTimeout(() => {
-            const interval = setInterval(() => {
-              currentValue += increment;
-              if (currentValue >= skill.level) {
-                currentValue = skill.level;
-                clearInterval(interval);
-              }
-              setAnimatedValues((prev) => ({ ...prev, [key]: Math.round(currentValue) }));
-            }, 20);
-          }, delay);
-        });
-      });
+      runAnimation();
     }
-  }, [isVisible]);
+  }, [isVisible, triggerKey]); // ✅ triggerKey added
 
   return (
     <section id="skills" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
+
           <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="secondary" className="mb-4">Technical Expertise</Badge>
+            <Badge variant="secondary" className="mb-4">
+              Technical Expertise
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Skills & <span className="text-gradient">Capabilities</span>
             </h2>
@@ -96,46 +161,47 @@ export const Skills = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, categoryIndex) => (
               <Card
-                key={categoryIndex}
-                className="p-6 hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-1 border border-transparent hover:border-primary/30 bg-card group overflow-hidden relative"
-                style={{ animationDelay: `${categoryIndex * 0.1}s` }}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-50 group-hover:opacity-70 transition-opacity`}></div>
+              key={categoryIndex}
+              onClick={(e) => handleCardClick(e, categoryIndex)}
+              className={`
+                relative cursor-pointer overflow-hidden
+                p-6 transition-all duration-500 ease-out
+                hover:-translate-y-1 hover:shadow-2xl
+                ${shakeCard === categoryIndex ? "animate-shake" : ""}
+              `}
+            >
+            
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-50 group-hover:opacity-70 transition-opacity`}
+                />
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold mb-6 text-gradient">
                     {category.category}
                   </h3>
+
                   <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => {
                       const key = `${categoryIndex}-${skillIndex}`;
                       const currentValue = animatedValues[key] || 0;
                       const progress = (currentValue / skill.level) * 100;
-                      
+
                       return (
                         <div key={skillIndex} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium">
-                              {skill.name}
-                            </span>
-                            <Badge 
-                              className="text-xs font-bold transition-all duration-300"
-                              style={{
-                                backgroundColor: `hsl(${180 + (progress * 1.8)} 70% ${40 + (progress * 0.2)}%)`,
-                                color: 'hsl(0 0% 100%)',
-                              }}
-                            >
+                          <div className="flex justify-between">
+                            <span className="text-sm font-medium">{skill.name}</span>
+                            <Badge className="text-xs font-bold">
                               {currentValue}%
                             </Badge>
                           </div>
-                          <div className="w-full bg-muted/50 rounded-full h-2.5 overflow-hidden shadow-inner">
+
+                          <div className="w-full bg-muted/50 rounded-full h-2.5 overflow-hidden">
                             <div
-                              className="h-full rounded-full transition-all duration-300 shadow-lg relative overflow-hidden"
+                              className="h-full rounded-full transition-all duration-300 relative"
                               style={{
                                 width: `${currentValue}%`,
-                                background: `linear-gradient(90deg, 
-                                  hsl(${180 + (progress * 1.8)} 70% 50%), 
-                                  hsl(${200 + (progress * 1.6)} 80% 60%))`,
-                                boxShadow: `0 0 10px hsl(${180 + (progress * 1.8)} 70% 50% / 0.5)`,
+                                background: `linear-gradient(90deg,
+                                  hsl(${180 + progress * 1.8} 70% 50%),
+                                  hsl(${200 + progress * 1.6} 80% 60%))`,
                               }}
                             >
                               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
@@ -149,6 +215,7 @@ export const Skills = () => {
               </Card>
             ))}
           </div>
+
         </div>
       </div>
     </section>

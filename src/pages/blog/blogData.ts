@@ -18,7 +18,7 @@ export type BlogPostType = {
         "IoT can feel overwhelming at first. This guide breaks it down into simple, practical steps that actually work.",
       category: "IoT",
       date: "March 15, 2024",
-      readTime: "8 min read",
+      readTime: "7 min read",
       fullContent: [
         "Most people hear about IoT and immediately think it is complicated or expensive. In reality, IoT simply means connecting a physical device to the internet so it can send or receive data.",
         "Every IoT system is built on three core components: sensors that collect data, a controller that processes it, and a network that transfers it to another system.",
@@ -36,7 +36,7 @@ export type BlogPostType = {
       excerpt:
         "PLC code isn’t just about logic — it’s about writing programs that people can understand and trust.",
       category: "Automation",
-      date: "March 10, 2024",
+      date: "April 10, 2025",
       readTime: "6 min read",
       fullContent: [
         "PLC programming often starts simple but quickly becomes complex if structure is ignored.",
@@ -74,7 +74,7 @@ export type BlogPostType = {
       excerpt:
         "Robotics isn’t magic — it’s a series of practical engineering decisions.",
       category: "Robotics",
-      date: "February 28, 2024",
+      date: "February 28, 2023",
       readTime: "12 min read",
       fullContent: [
         "Every robot starts with a clear purpose.",
@@ -87,24 +87,24 @@ export type BlogPostType = {
       ],
     },
   
-    {
-      slug: "flutter-industrial",
-      title: "Using Flutter for Industrial Applications: Beyond Just Mobile UI",
-      excerpt:
-        "Flutter can be a powerful tool for monitoring and controlling real systems.",
-      category: "Development",
-      date: "February 20, 2024",
-      readTime: "7 min read",
-      fullContent: [
-        "Industrial applications prioritize reliability over visual effects.",
-        "Flutter allows one codebase to serve multiple platforms.",
-        "Real-time data visualization improves operator awareness.",
-        "Offline support is essential in unstable network environments.",
-        "Security and authentication protect control systems.",
-        "Good UI design improves safety and efficiency.",
-        "Industrial apps should assist users, not overwhelm them."
-      ],
-    },
+    // {
+    //   slug: "flutter-industrial",
+    //   title: "Using Flutter for Industrial Applications: Beyond Just Mobile UI",
+    //   excerpt:
+    //     "Flutter can be a powerful tool for monitoring and controlling real systems.",
+    //   category: "Development",
+    //   date: "February 20, 2024",
+    //   readTime: "7 min read",
+    //   fullContent: [
+    //     "Industrial applications prioritize reliability over visual effects.",
+    //     "Flutter allows one codebase to serve multiple platforms.",
+    //     "Real-time data visualization improves operator awareness.",
+    //     "Offline support is essential in unstable network environments.",
+    //     "Security and authentication protect control systems.",
+    //     "Good UI design improves safety and efficiency.",
+    //     "Industrial apps should assist users, not overwhelm them."
+    //   ],
+    // },
   
     {
       slug: "safety-systems",
