@@ -10,55 +10,63 @@ export const Skills = () => {
   const [triggerKey, setTriggerKey] = useState(0); // ✅ NEW
   const [activeCard, setActiveCard] = useState<number | null>(null);
 const [shakeCard, setShakeCard] = useState<number | null>(null);
+const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
 
 
-  const skillCategories = [
-    {
-      category: "Automation & Control",
-      color: "from-primary/20 to-primary/5",
-      skills: [
-        { name: "PLC Programming", level: 95 },
-        { name: "HMI Development", level: 90 },
-        { name: "SCADA Systems", level: 85 },
-      ],
-    },
-    {
-      category: "Hardware Engineering",
-      color: "from-secondary/20 to-secondary/5",
-      skills: [
-        { name: "Embedded Systems", level: 92 },
-        { name: "Circuit Design", level: 88 },
-        { name: "PCB Design", level: 85 },
-      ],
-    },
-    {
-      category: "Robotics & IoT",
-      color: "from-primary/20 to-secondary/10",
-      skills: [
-        { name: "IoT Systems", level: 90 },
-        { name: "Robotics", level: 87 },
-        { name: "Drone Technology", level: 83 },
-      ],
-    },
-    {
-      category: "Software Development",
-      color: "from-secondary/20 to-primary/10",
-      skills: [
-        { name: "Flutter Development", level: 88 },
-        { name: "Java Programming", level: 85 },
-        { name: "Mobile App Development", level: 87 },
-      ],
-    },
-    {
-      category: "Cybersecurity",
-      color: "from-primary/15 to-secondary/15",
-      skills: [
-        { name: "Kali Linux", level: 80 },
-        { name: "Network Security", level: 78 },
-        { name: "Penetration Testing", level: 75 },
-      ],
-    },
-  ];
+
+const skillCategories = [
+  {
+    category: "Automation & Control",
+    color: "from-primary/20 to-primary/5",
+    sound: "/sounds/automation.mp3",
+    skills: [
+      { name: "PLC Programming", level: 95 },
+      { name: "HMI Development", level: 90 },
+      { name: "SCADA Systems", level: 85 },
+    ],
+  },
+  {
+    category: "Hardware Engineering",
+    color: "from-secondary/20 to-secondary/5",
+    sound: "/sounds/hardware.mp3",
+    skills: [
+      { name: "Embedded Systems", level: 92 },
+      { name: "Circuit Design", level: 88 },
+      { name: "PCB Design", level: 85 },
+    ],
+  },
+  {
+    category: "Robotics & IoT",
+    color: "from-primary/20 to-secondary/10",
+    sound: "/sounds/robotics.mp3",
+    skills: [
+      { name: "IoT Systems", level: 90 },
+      { name: "Robotics", level: 87 },
+      { name: "Drone Technology", level: 83 },
+    ],
+  },
+  {
+    category: "Software Development",
+    color: "from-secondary/20 to-primary/10",
+    sound: "/sounds/software.mp3",
+    skills: [
+      { name: "Flutter Development", level: 88 },
+      { name: "Java Programming", level: 85 },
+      { name: "Mobile App Development", level: 87 },
+    ],
+  },
+  {
+    category: "Cybersecurity",
+    color: "from-primary/15 to-secondary/15",
+    sound: "/sounds/cyber.mp3",
+    skills: [
+      { name: "Kali Linux", level: 80 },
+      { name: "Network Security", level: 78 },
+      { name: "Penetration Testing", level: 75 },
+    ],
+  },
+];
+
 
   // ✅ REUSABLE animation runner
   const runAnimation = (cardIndex?: number) => {
@@ -107,13 +115,13 @@ const [shakeCard, setShakeCard] = useState<number | null>(null);
     setActiveCard(index);
     setShakeCard(index);
     runAnimation(index);
-    playClickSound();
-
   
-    // Remove shake after animation
+    playCardSound(skillCategories[index].sound);
+  
+    // Remove shake
     setTimeout(() => setShakeCard(null), 500);
   
-    // Ripple effect
+    // Ripple
     const card = e.currentTarget;
     const ripple = document.createElement("span");
     const size = Math.max(card.clientWidth, card.clientHeight);
@@ -125,13 +133,30 @@ const [shakeCard, setShakeCard] = useState<number | null>(null);
     card.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   };
-
-  const playClickSound = () => {
-    const audio = new Audio("/sounds/FAVE-Intentions-A-COLORS-SHOW-(TrendyBeatz.com).mp3");
-    audio.volume = 0.25;
+  
+  const playCardSound = (soundUrl: string) => {
+    // Stop previous audio if any
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+  
+    const audio = new Audio(soundUrl);
+    audio.volume = 0.35;
     audio.play().catch(() => {});
+  
+    setCurrentAudio(audio);
   };
   
+  
+  useEffect(() => {
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+    };
+  }, [currentAudio]);
   
 
   // 🔁 Run on scroll OR manual trigger
