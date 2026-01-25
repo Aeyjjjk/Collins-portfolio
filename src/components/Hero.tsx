@@ -126,7 +126,7 @@ export const Hero = () => {
             </Button>
           </div>
 
-          <div className="pt-16 animate-bounce">
+          <div className="pt-10 animate-bounce">
             <ArrowDown className="h-6 w-6 mx-auto text-muted-foreground" />
           </div>
         </div>
