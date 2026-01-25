@@ -14,7 +14,7 @@ export const Projects = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", slidesToScroll: 1 },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+    [Autoplay({ delay: 400000, stopOnInteraction: false })]
   );
 
   const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
@@ -54,14 +54,27 @@ export const Projects = () => {
                   <Card
                     className="overflow-hidden hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 border border-transparent hover:border-primary/30 group h-full"
                   >
-                    <div className="h-48 relative overflow-hidden">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent"></div>
-                    </div>
+                   <div className="h-48 relative overflow-hidden">
+  {index === 0 ? (
+    <video
+      src="/video/robotVideo.mp4"
+      muted
+      loop
+      autoPlay
+      playsInline
+      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+  ) : (
+    <img 
+      src={project.image} 
+      alt={project.title}
+      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+    />
+  )}
+
+  <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent pointer-events-none"></div>
+</div>
+
                     <CardHeader>
                       <CardTitle className="group-hover:text-gradient transition-all">{project.title}</CardTitle>
                       <CardDescription className="text-sm leading-relaxed">{project.description}</CardDescription>

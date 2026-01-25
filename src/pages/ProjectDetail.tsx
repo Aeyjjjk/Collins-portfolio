@@ -15,7 +15,7 @@ export default function ProjectDetail() {
     "gas-robot": {
       title: "Autonomous Gas Detector and Obstacle Avoidance Robot",
       year: "2024",
-      role: "Hardware Designer & Embedded Systems Developer",
+      role: "Hardware & Embedded Systems Developer",
       description: "An autonomous mobile robot designed to detect and monitor hazardous gas levels in industrial environments. Features real-time data transmission and alert systems.",
       fullDescription: "This advanced robotic system combines embedded systems with sensor technology to create a comprehensive gas monitoring solution. The robot autonomously navigates through industrial facilities while continuously monitoring air quality and detecting dangerous gas concentrations. When hazardous levels are detected, the system displays real-time readings on an LCD screen, triggers an audible alarm, and autonomously moves the robot away from danger zones while avoiding obstacles.",
       tech: ["Arduino", "Gas Sensors", "Ultrasonic Sensor", "L298N Motor Controller", "C++", "DC-DC Buck Converter", "Servo Motor"],
@@ -33,26 +33,37 @@ export default function ProjectDetail() {
       outcomes: "Successfully deployed prototype demonstrating 95% detection accuracy, 3-hour battery life, and reliable operation in challenging industrial conditions.",
       github: "https://github.com/Aeyjjjk/autonomous-robot",
     },
-    "rfid-system": {
-      title: "RFID Attendance System",
+    "water-level detector":{
+      title: "Water Level Detection & Alert System",
       year: "2023",
-      role: "IOT Integration & Embedded Systems Engineer",
-      description: "Smart attendance tracking system using RFID technology for automated student/employee check-in with real-time database integration.",
-      fullDescription: "A comprehensive attendance management solution that eliminates manual record-keeping through RFID technology. The system provides instant verification, reduces time spent on attendance, and offers detailed analytics and reporting capabilities.",
-      tech: ["RFID Reader", "Microcontroller", "Database", "LCD Display", "Buzzer"],
-      category: "Embedded Systems",
-      image: "📋",
-      features: [
-        "Instant RFID card recognition",
-        "Real-time database synchronization",
-        "Visual and audio confirmation",
-        "Attendance reports and analytics",
-        "Admin dashboard for management",
-        "Low power consumption design",
+      role: "Embedded Systems & IoT Engineer",
+      description:
+        "An automated water level monitoring system that detects water depth and triggers an alarm when a predefined threshold is reached.",
+      fullDescription:
+        "This project is a water level and depth detection system designed to monitor liquid levels in tanks or reservoirs in real time. Using a sensor connected to a microcontroller, the system continuously measures the water level and compares it against a predefined setpoint. When the water reaches or exceeds the critical level, a buzzer is automatically triggered to alert users, helping to prevent overflow, equipment damage, or water wastage.",
+      tech: [
+        "Water Level Sensor",
+        "Microcontroller",
+        "Buzzer",
+        "Power Supply",
+        "Connecting Wires",
       ],
-      goals: "Streamline attendance tracking process and provide accurate, tamper-proof records with minimal human intervention.",
-      outcomes: "Reduced attendance processing time by 90%, achieved 99.8% accuracy, and successfully processed over 10,000 transactions during testing phase.",
-    },
+      category: "Embedded Systems",
+      image: "/images/projects/waterLevel.jpeg",
+      features: [
+        "Real-time water level monitoring",
+        "Configurable level threshold (setpoint)",
+        "Automatic buzzer alert on overflow risk",
+        "Fast response and reliable detection",
+        "Simple and low-cost hardware design",
+        "Suitable for tanks, wells, and reservoirs",
+      ],
+      goals:
+        "To prevent water overflow and equipment damage by providing a simple, reliable alert system when water reaches a critical level.",
+      outcomes:
+        "Successfully detected water levels with high accuracy, triggered timely alerts at the set threshold, and demonstrated reliable performance during continuous testing.",
+    }
+    ,
     "flutter-apps": {
       title: "Flutter Mobile Apps",
       year: "2022-2024",

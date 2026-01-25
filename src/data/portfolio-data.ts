@@ -20,9 +20,9 @@
 export const heroData = {
   name: "Echezonachi Collins", // TODO: Replace with your name
   title: "Engineer & Developer", // TODO: Replace with your title
-  tagline: "Where engineering meets innovation.", // TODO: Your tagline
+  tagline: "I was born to be an engineer.", // TODO: Your tagline
   profileImage: "/images/profile.jpg", // TODO: Replace with "/images/profile.jpg"
-  heroBackgroundImage: "/images/hero-bg.jpg",
+  // heroBackgroundImage: "/images/hero-bg.jpg",
   skills: [
     "Embedded Systems",
     "Automation",
@@ -50,14 +50,16 @@ export const projectsData = [
     title: "Gas Detecting Robot",
     description: "Autonomous robot for detecting and monitoring hazardous gas levels in industrial environments.",
     tech: ["Arduino", "Gas Sensors", "Buzzer", "C++"],
-    image: "/images/project-more/robot-FV.jpg",
+    video: "/video/robotVideo.mp4", // ✅ NEW
+    isVideoPreview: true, // ✅ NEW
+    // image: "/images/project-more/robot-FV.jpg",
   },
   {
-    id: "rfid-system",
-    title: "RFID Attendance System",
-    description: "Smart attendance tracking using RFID technology with real-time database integration.",
-    tech: ["RFID", "Microcontroller", "Database", "LCD"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/rfid-system.jpg"
+    id: "water-level detector",
+    title: "Water Level Detecting System",
+    description: "A system that detects the depth of water and sends output signals or notification the owner.",
+    tech: ["Arduino Uno", "Level Detector", "Buzzer"],
+    image: "images/projects/waterLevel.jpeg",
   },
   {
     id: "flutter-apps",

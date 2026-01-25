@@ -20,9 +20,9 @@ const skillCategories = [
     color: "from-primary/20 to-primary/5",
     sound: "/sounds/automation.mp3",
     skills: [
-      { name: "PLC Programming", level: 95 },
-      { name: "HMI Development", level: 90 },
-      { name: "SCADA Systems", level: 85 },
+      { name: "PLC Programming", level: 75 },
+      { name: "HMI Development", level: 80 },
+      // { name: "SCADA Systems", level: 85 },
     ],
   },
   {
@@ -30,9 +30,11 @@ const skillCategories = [
     color: "from-secondary/20 to-secondary/5",
     sound: "/sounds/hardware.mp3",
     skills: [
-      { name: "Embedded Systems", level: 92 },
-      { name: "Circuit Design", level: 88 },
-      { name: "PCB Design", level: 85 },
+      { name: "Embedded Systems", level: 80 },
+      { name: "Microcontroller Programming", level: 70 },
+      { name: "Sensors & Actuators Integration", level: 75 },
+      { name: "P&ID Interpretation", level: 85 },
+      { name: "Motors Control", level: 50 },
     ],
   },
   {
@@ -40,9 +42,12 @@ const skillCategories = [
     color: "from-primary/20 to-secondary/10",
     sound: "/sounds/robotics.mp3",
     skills: [
-      { name: "IoT Systems", level: 90 },
-      { name: "Robotics", level: 87 },
-      { name: "Drone Technology", level: 83 },
+      { name: "Autonomous Robot Development", level: 90 },
+      { name: "Robotic Navigation & Obstacle Avoidance", level: 87 },
+      { name: "Arduino-based IoT system", level: 80 },
+      { name: "MQTT protocol Implementation", level: 50 },
+      { name: "Remote-controlled robots via IoT", level: 70 },
+      
     ],
   },
   {
@@ -50,9 +55,8 @@ const skillCategories = [
     color: "from-secondary/20 to-primary/10",
     sound: "/sounds/software.mp3",
     skills: [
-      { name: "Flutter Development", level: 88 },
-      { name: "Java Programming", level: 85 },
-      { name: "Mobile App Development", level: 87 },
+      { name: "Flutter Dart", level: 70 },
+      { name: "Mobile/Web App Development", level: 75 },
     ],
   },
   {
@@ -173,13 +177,13 @@ const skillCategories = [
 
           <div className="text-center mb-16 animate-fade-in">
             <Badge variant="secondary" className="mb-4">
-              Technical Expertise
+              What I Know
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Skills & <span className="text-gradient">Capabilities</span>
+              My Skills & <span className="text-gradient">Capabilities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive expertise across multiple engineering and technology domains
+            Practical skills across engineering, automation, hardware, and software development.
             </p>
           </div>
 
