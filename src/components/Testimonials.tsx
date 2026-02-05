@@ -27,7 +27,7 @@ export const Testimonials = () => {
               Client Testimonials
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-              What clients say about working with me
+              What clients said about working with me
             </p>
 
             {/* Animated Toggle Button */}

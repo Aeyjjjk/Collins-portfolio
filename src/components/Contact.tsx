@@ -11,7 +11,7 @@ export const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const contactEmail = "fotxg@yahoo.com";
+  const contactEmail = "youngironic911@gmail.com";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ export const Contact = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Get your free API key from https://web3forms.com
+          access_key: "b0cb61ae-49ba-40c1-9e43-78167986df05", // Get your free API key from https://web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -37,7 +37,7 @@ export const Contact = () => {
       if (result.success) {
         toast({
           title: "Message sent successfully!",
-          description: "I'll get back to you as soon as possible.",
+          description: "I'll get back to you as soon as possible. Thank you.",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -62,13 +62,13 @@ export const Contact = () => {
               Let's Work <span className="text-gradient">Together</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind? Let's discuss how we can work together to bring your ideas to life
+              Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-8 border-2 bg-card">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6">Contact Me</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -85,7 +85,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-muted-foreground">+234 XXX XXX XXXX</p>
+                    <p className="text-muted-foreground">+234 705 126 4684</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

@@ -10,10 +10,35 @@ export const Certifications = () => {
 
   const certifications = [
     {
-      year: "2024",
-      title: "Advanced PLC & HMI Programming",
-      issuer: "Industrial Automation Institute",
+      year: "In Progress",
+      title: "Process Control and Instrumentation",
+      issuer: "Industrial Automation Institute (Udemy)",
       category: "Automation",
+    },
+    {
+      year: "2025",
+      title: " HSE 1,2,3 (Certified)",
+      issuer: "DUSSO Integrated Limited",
+      category: "Safety",
+    },
+   
+    {
+      year: "2024",
+      title: "Cybersecurity",
+      issuer: "Google",
+      category: "Security",
+    },
+    // {
+    //   year: "2021",
+    //   title: "Robotics & Mechatronics Design",
+    //   issuer: "Robotics Engineering Institute",
+    //   category: "Robotics",
+    // },
+    {
+      year: "2024",
+      title: "Flutter Mobile Development",
+      issuer: "Google Developers",
+      category: "Development",
     },
     {
       year: "2023",
@@ -21,42 +46,20 @@ export const Certifications = () => {
       issuer: "Electronics Engineering Academy",
       category: "Embedded Systems",
     },
-    {
-      year: "2023",
-      title: "Certified Safety Professional (CSP)",
-      issuer: "QHSE Training Institute",
-      category: "Safety",
-    },
+  
     {
       year: "2022",
       title: "IoT Systems & Cloud Integration",
       issuer: "Tech Innovation Center",
       category: "IoT",
     },
-    {
-      year: "2022",
-      title: "Cybersecurity Fundamentals",
-      issuer: "Kali Linux Academy",
-      category: "Security",
-    },
-    {
-      year: "2021",
-      title: "Robotics & Mechatronics Design",
-      issuer: "Robotics Engineering Institute",
-      category: "Robotics",
-    },
-    {
-      year: "2021",
-      title: "Flutter Mobile Development",
-      issuer: "Google Developers",
-      category: "Development",
-    },
-    {
-      year: "2020",
-      title: "Linux System Administration",
-      issuer: "Linux Professional Institute",
-      category: "Linux",
-    },
+  
+    // {
+    //   year: "2020",
+    //   title: "Linux System Administration",
+    //   issuer: "Linux Professional Institute",
+    //   category: "Linux",
+    // },
   ];
 
   const containerVariants = {

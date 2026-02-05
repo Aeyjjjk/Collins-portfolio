@@ -10,7 +10,7 @@ export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Project data (in real app, this would come from API or context)
+  // Project data with multiple images for each project
   const projects: Record<string, any> = {
     "gas-robot": {
       title: "Autonomous Gas Detector and Obstacle Avoidance Robot",
@@ -20,7 +20,11 @@ export default function ProjectDetail() {
       fullDescription: "This advanced robotic system combines embedded systems with sensor technology to create a comprehensive gas monitoring solution. The robot autonomously navigates through industrial facilities while continuously monitoring air quality and detecting dangerous gas concentrations. When hazardous levels are detected, the system displays real-time readings on an LCD screen, triggers an audible alarm, and autonomously moves the robot away from danger zones while avoiding obstacles.",
       tech: ["Arduino", "Gas Sensors", "Ultrasonic Sensor", "L298N Motor Controller", "C++", "DC-DC Buck Converter", "Servo Motor"],
       category: "Robotics",
-      image: "/images/project-more/gas-robot.jpg",
+      images: [
+        "/images/project-more/gas-robot.jpg",
+        "/images/project-more/robot-FV.jpg",
+        "/images/gallery/robot-SV.jpg"
+      ],
       features: [
         "Autonomous navigation system",
         "Multi-gas detection capability (CO, CO2, LPG, Methane)",
@@ -33,23 +37,20 @@ export default function ProjectDetail() {
       outcomes: "Successfully deployed prototype demonstrating 95% detection accuracy, 3-hour battery life, and reliable operation in challenging industrial conditions.",
       github: "https://github.com/Aeyjjjk/autonomous-robot",
     },
-    "water-level detector":{
+    "water-level-detector": {
       title: "Water Level Detection & Alert System",
       year: "2023",
       role: "Embedded Systems & IoT Engineer",
-      description:
-        "An automated water level monitoring system that detects water depth and triggers an alarm when a predefined threshold is reached.",
-      fullDescription:
-        "This project is a water level and depth detection system designed to monitor liquid levels in tanks or reservoirs in real time. Using a sensor connected to a microcontroller, the system continuously measures the water level and compares it against a predefined setpoint. When the water reaches or exceeds the critical level, a buzzer is automatically triggered to alert users, helping to prevent overflow, equipment damage, or water wastage.",
-      tech: [
-        "Water Level Sensor",
-        "Microcontroller",
-        "Buzzer",
-        "Power Supply",
-        "Connecting Wires",
-      ],
+      description: "An automated water level monitoring system that detects water depth and triggers an alarm when a predefined threshold is reached.",
+      fullDescription: "This project is a water level and depth detection system designed to monitor liquid levels in tanks or reservoirs in real time. Using a sensor connected to a microcontroller, the system continuously measures the water level and compares it against a predefined setpoint. When the water reaches or exceeds the critical level, a buzzer is automatically triggered to alert users, helping to prevent overflow, equipment damage, or water wastage.",
+      tech: ["Water Level Sensor", "Microcontroller", "Buzzer", "Power Supply", "Connecting Wires"],
       category: "Embedded Systems",
-      image: "/images/projects/waterLevel.jpeg",
+      images: [
+        "/images/projects/waterLevel-1.jpeg",
+        "/images/projects/waterLevel-2.jpeg",
+        "/images/projects/waterLevel-3.jpeg",
+        "/images/projects/waterLevel-4.jpeg"
+      ],
       features: [
         "Real-time water level monitoring",
         "Configurable level threshold (setpoint)",
@@ -58,12 +59,9 @@ export default function ProjectDetail() {
         "Simple and low-cost hardware design",
         "Suitable for tanks, wells, and reservoirs",
       ],
-      goals:
-        "To prevent water overflow and equipment damage by providing a simple, reliable alert system when water reaches a critical level.",
-      outcomes:
-        "Successfully detected water levels with high accuracy, triggered timely alerts at the set threshold, and demonstrated reliable performance during continuous testing.",
-    }
-    ,
+      goals: "To prevent water overflow and equipment damage by providing a simple, reliable alert system when water reaches a critical level.",
+      outcomes: "Successfully detected water levels with high accuracy, triggered timely alerts at the set threshold, and demonstrated reliable performance during continuous testing.",
+    },
     "flutter-apps": {
       title: "Flutter Mobile Apps",
       year: "2022-2024",
@@ -72,7 +70,12 @@ export default function ProjectDetail() {
       fullDescription: "A collection of professional mobile applications built with Flutter, demonstrating mastery of modern mobile development principles, state management, and API integration. Applications range from productivity tools to industrial monitoring solutions.",
       tech: ["Flutter", "Dart", "Firebase", "REST APIs", "State Management"],
       category: "Software Development",
-      image: "📱",
+      images: [
+        "/images/projects/flutter-app-1.jpg",
+        "/images/projects/flutter-app-2.jpg",
+        "/images/projects/flutter-app-3.jpg",
+        "/images/projects/flutter-app-4.jpg"
+      ],
       features: [
         "Cross-platform compatibility (iOS & Android)",
         "Modern, intuitive user interfaces",
@@ -84,26 +87,6 @@ export default function ProjectDetail() {
       goals: "Deliver high-quality, performant mobile applications that provide excellent user experiences across all platforms.",
       outcomes: "Published multiple apps with 4.5+ star ratings, thousands of downloads, and positive user feedback on performance and design.",
     },
-    // "drone-design": {
-    //   title: "Drone Design Project",
-    //   year: "2023",
-    //   role: "Robotics Engineer & Flight Systems Developer",
-    //   description: "Custom quadcopter design with advanced flight control systems, GPS navigation, and payload capabilities.",
-    //   fullDescription: "An advanced unmanned aerial vehicle project focusing on stable flight control, autonomous navigation, and practical payload delivery capabilities. The drone incorporates custom flight controller programming and advanced sensor fusion.",
-    //   tech: ["Flight Controller", "IMU Sensors", "GPS Module", "ESC Programming", "Telemetry"],
-    //   category: "Robotics & IoT",
-    //   image: "",
-    //   features: [
-    //     "Stable autonomous flight control",
-    //     "GPS waypoint navigation",
-    //     "Real-time telemetry and monitoring",
-    //     "Payload delivery system",
-    //     "Failsafe and return-to-home functionality",
-    //     "Long-range communication system",
-    //   ],
-    //   goals: "Design and build a reliable drone platform capable of autonomous missions for industrial inspection and delivery applications.",
-    //   outcomes: "Achieved 25-minute flight time, 500m range, 1kg payload capacity, and successful completion of autonomous missions.",
-    // },
     "plc-systems": {
       title: "PLC & HMI Systems",
       year: "2023-Present",
@@ -112,7 +95,12 @@ export default function ProjectDetail() {
       fullDescription: "Professional PLC programming projects implementing complete automation solutions for industrial processes. Includes SCADA integration, alarm management, and comprehensive HMI development for operator interfaces.",
       tech: ["RSLogix 5000", "Ladder Logic", "FactoryTalk", "Industrial Protocols"],
       category: "Automation & Control",
-      image: "/images/gallery/hmi.PNG",
+      images: [
+        "/images/gallery/hmi-1.PNG",
+        "/images/gallery/hmi-2.PNG",
+        "/images/gallery/hmi-3.PNG",
+        "/images/gallery/hmi-4.PNG"
+      ],
       features: [
         "Comprehensive process control logic",
         "Intuitive HMI operator interfaces",
@@ -124,26 +112,6 @@ export default function ProjectDetail() {
       goals: "Create reliable, maintainable automation solutions that improve efficiency and safety in industrial processes.",
       outcomes: "Implemented systems controlling critical processes with 99.9% uptime, reducing manual intervention by 80%.",
     },
-    // "java-apps": {
-    //   title: "Java Applications",
-    //   year: "2021-2023",
-    //   role: "Backend Developer & Software Engineer",
-    //   description: "Enterprise-grade Java applications with robust backend systems, database integration, and scalable architectures.",
-    //   fullDescription: "Professional Java development projects ranging from desktop applications to backend services. Demonstrates proficiency in object-oriented programming, design patterns, and enterprise application architecture.",
-    //   tech: ["Java", "Spring Framework", "MySQL", "REST APIs", "Maven"],
-    //   category: "Software Development",
-    //   image: "",
-    //   features: [
-    //     "Robust backend architecture",
-    //     "Secure authentication and authorization",
-    //     "Database integration and ORM",
-    //     "RESTful API development",
-    //     "Unit testing and quality assurance",
-    //     "Scalable, maintainable codebase",
-    //   ],
-    //   goals: "Develop enterprise-quality Java applications that meet professional standards for reliability, security, and maintainability.",
-    //   outcomes: "Delivered production-ready applications serving thousands of users with excellent performance and stability.",
-    // },
   };
 
   const project = id ? projects[id] : null;
@@ -200,15 +168,39 @@ export default function ProjectDetail() {
               </p>
             </div>
 
-            {/* Project Image/Banner */}
-            <Card className="aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 flex items-center justify-center mb-12 border-2 overflow-hidden relative">
-              <img 
-               src={project.image}
-               alt={project.title}
-               className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 pointer-events-none" />
+            {/* Main Project Image */}
+            <Card className="aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 flex items-center justify-center mb-8 border-2 overflow-hidden relative">
+              {project.images && project.images[0] && (
+                <>
+                  <img 
+                    src={project.images[0]}
+                    alt={`${project.title} - Main view`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 pointer-events-none" />
+                </>
+              )}
             </Card>
+
+            {/* Additional Images Grid */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {project.images && project.images.slice(1).map((image: string, index: number) => (
+                  <Card 
+                    key={index} 
+                    className="aspect-video bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 overflow-hidden relative group cursor-pointer hover:scale-[1.02] transition-transform duration-300"
+                  >
+                    <img 
+                      src={image}
+                      alt={`${project.title} - View ${index + 2}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
+                  </Card>
+                ))}
+              </div>
+            </div>
 
             {/* Tech Stack */}
             <div className="mb-12">
@@ -269,17 +261,13 @@ export default function ProjectDetail() {
                     View on GitHub
                   </a>
                 </Button>
-                {/* <Button variant="outline" className="border-2">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Live Demo
-                </Button> */}
               </div>
             )}
           </div>
         </div>
       </div>
 
-      
+      <Footer />
     </div>
   );
 }

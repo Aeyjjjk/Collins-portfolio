@@ -19,8 +19,8 @@ export const Footer = () => {
                 <span className="text-gradient">Echezonachi Collins</span>
               </h3>
               <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-                Engineering systems where hardware meets software —
-                built with intention, clarity, and long-term thinking.
+              Engineering cohesive systems where hardware integrates with software — 
+architected with deliberate design, clarity of purpose, and forward-thinking execution.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ export const Footer = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/yourphonenumber"
+                    href="https://wa.me/2349064574106"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -53,7 +53,7 @@ export const Footer = () => {
                   asChild
                 >
                   <a
-                    href="https://linkedin.com/in/yourprofile"
+                    href="https://www.linkedin.com/in/echezonachi-u-568069293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -67,7 +67,7 @@ export const Footer = () => {
                   className="rounded-full hover:text-primary hover:bg-primary/10 transition"
                   asChild
                 >
-                  <a href="mailto:yourmail@example.com">
+                  <a href="mailto:youngironic911@gmail.com">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>
@@ -81,7 +81,7 @@ export const Footer = () => {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
-              © {new Date().getFullYear()} Echezonachi Collins — All rights reserved.
+              © 2022 - {new Date().getFullYear()} Echezonachi  — All rights reserved.
             </p>
 
             <a

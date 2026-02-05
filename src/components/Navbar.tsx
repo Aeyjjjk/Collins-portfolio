@@ -42,6 +42,7 @@ export const Navbar = () => {
     { name: "Projects", href: "#projects" },
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
+    // { name: "Gallery", href: "#gallery" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -93,7 +94,7 @@ export const Navbar = () => {
             onClick={() => scrollToSection("#about")}
             className="text-xl font-bold text-gradient hover:scale-105 transition-all duration-300 hover:opacity-90"
           >
-            Echezonachi
+            Greetings...
           </button>
 
           {/* Desktop Navigation */}

@@ -39,14 +39,14 @@ export const BlogPost = () => {
       <div className="container mx-auto px-6 max-w-5xl">
 
         {/* Back Button */}
-        <Button
+        {/* <Button
           variant="ghost"
           className="mb-8 text-muted-foreground hover:text-muted-foreground/70 hover:bg-transparent"
-          onClick={() => navigate("/blog")}
+          onClick={() => navigate("/")}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Blog
-        </Button>
+        </Button> */}
 
         <Badge className="mb-4">{post.category}</Badge>
 

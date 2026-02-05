@@ -29,10 +29,10 @@ export const heroData = {
     "Hardware Engineering",
     "PLC & HMI",
     "IoT",
-    "Robotics",
-    "Flutter Development",
+    // "Robotics",
+    // "Flutter Development",
     "Cybersecurity",
-    "Kali Linux",
+    // "Kali Linux",
   ],
   socialLinks: {
     whatsapp: "https://wa.me/2349064574106", 
@@ -55,7 +55,7 @@ export const projectsData = [
     // image: "/images/project-more/robot-FV.jpg",
   },
   {
-    id: "water-level detector",
+    id: "water-level-detector",
     title: "Water Level Detecting System",
     description: "A system that detects the depth of water and sends output signals or notification the owner.",
     tech: ["Arduino Uno", "Level Detector", "Buzzer"],
