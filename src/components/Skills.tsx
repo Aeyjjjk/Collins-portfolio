@@ -180,7 +180,7 @@ const skillCategories = [
               What I Know
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              My Skills & <span className="text-gradient">Capabilities</span>
+              My  <span className="text-gradient">Capabilities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Practical skills across engineering, automation, hardware, and software development.
