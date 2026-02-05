@@ -68,27 +68,27 @@ export const projectsData = [
     tech: ["Flutter", "Dart", "Firebase", "REST APIs"],
     image: "/images/project-more/flutter-app.jpg",
   },
-  {
-    id: "drone-design",
-    title: "Drone Design Project",
-    description: "Custom quadcopter with advanced flight control, GPS navigation, and payload capabilities.",
-    tech: ["Flight Controller", "IMU", "GPS", "Telemetry"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/drone.jpg"
-  },
+  // {
+  //   id: "drone-design",
+  //   title: "Drone Design Project",
+  //   description: "Custom quadcopter with advanced flight control, GPS navigation, and payload capabilities.",
+  //   tech: ["Flight Controller", "IMU", "GPS", "Telemetry"],
+  //   image: "/placeholder.svg", // TODO: Replace with "/images/projects/drone.jpg"
+  // },
   {
     id: "plc-systems",
     title: "PLC & HMI Systems",
     description: "Industrial automation control systems with intuitive HMI interfaces for process monitoring.",
-    tech: ["PLC", "Ladder Logic", "HMI", "SCADA"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/plc-systems.jpg"
+    tech: ["PLC", "Ladder Logic", "HMI", "FactoryTalk"],
+    image: "/images/gallery/hmi1.PNG", // TODO: Replace with "/images/projects/plc-systems.jpg"
   },
-  {
-    id: "java-apps",
-    title: "Java Applications",
-    description: "Enterprise-grade Java applications with robust backend systems and database integration.",
-    tech: ["Java", "Spring", "MySQL", "REST APIs"],
-    image: "/placeholder.svg", // TODO: Replace with "/images/projects/java-apps.jpg"
-  },
+  // {
+  //   id: "java-apps",
+  //   title: "Java Applications",
+  //   description: "Enterprise-grade Java applications with robust backend systems and database integration.",
+  //   tech: ["Java", "Spring", "MySQL", "REST APIs"],
+  //   image: "/placeholder.svg", // TODO: Replace with "/images/projects/java-apps.jpg"
+  // },
 ];
 
 // ===========================================
