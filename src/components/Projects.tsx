@@ -102,7 +102,7 @@ export const Projects = () => {
             </div>
           </div>
 
-          {/* Number Indicators */}
+          
           <div className="flex justify-center items-center gap-3 mt-8">
             {projectsData.map((_, index) => (
               <button
