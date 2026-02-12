@@ -239,11 +239,10 @@ export const Services = () => {
                               {/* Animated gradient overlay */}
                               <div className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                               
-                              {/* Corner accents */}
+                             
                               <div className="absolute top-0 left-0 w-16 h-16 border-t border-l border-primary/30 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                               <div className="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-primary/30 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                               
-                              {/* Icon with floating animation */}
                               <div className="relative z-10 mb-6">
                                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.accent} p-0.5`}>
                                   <div className="w-full h-full rounded-2xl bg-background flex items-center justify-center">
@@ -263,7 +262,7 @@ export const Services = () => {
                                 />
                               </div>
                               
-                              {/* Content */}
+                            
                               <div className="relative z-10">
                                 <h3 className="text-2xl font-bold mb-4 leading-tight">
                                   {service.title}
@@ -273,7 +272,7 @@ export const Services = () => {
                                 </p>
                               </div>
                               
-                              {/* Hover glow effect */}
+                             
                               <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10" />
                             </div>
                           </motion.div>
@@ -282,12 +281,12 @@ export const Services = () => {
                     </AnimatePresence>
                   </div>
                   
-                  {/* Decorative elements */}
+                
                   <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-r from-primary/10 to-transparent rounded-full blur-3xl -z-10" />
                   <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-l from-accent/10 to-transparent rounded-full blur-3xl -z-10" />
                 </div>
 
-                {/* Stats footer - Animated entrance */}
+               
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -317,7 +316,7 @@ export const Services = () => {
           )}
         </AnimatePresence>
 
-        {/* CTA when collapsed */}
+
         <AnimatePresence>
           {!isExpanded && (
             <motion.div
