@@ -10,7 +10,7 @@ export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Project data with multiple images for each project
+  
   const projects: Record<string, any> = {
     "gas-robot": {
       title: "Autonomous Gas Detector and Obstacle Avoidance Robot",
