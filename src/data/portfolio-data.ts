@@ -32,8 +32,8 @@ export const projectsData = [
     title: "Gas Detecting Robot",
     description: "Autonomous robot for detecting and monitoring hazardous gas levels in industrial environments.",
     tech: ["Arduino", "Gas Sensors", "Buzzer", "C++"],
-    video: "/video/robotVideo.mp4", // ✅ NEW
-    isVideoPreview: true, // ✅ NEW
+    video: "/video/robotVideo.mp4", 
+    isVideoPreview: true,
     // image: "/images/project-more/robot-FV.jpg",
   },
   {
