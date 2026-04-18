@@ -27,7 +27,7 @@ export default function ProjectDetail() {
       ],
       features: [
         "Autonomous navigation system",
-        "Multi-gas detection capability (CO, CO2, LPG, Methane)",
+        "Multi-gas detection capability (CO, LPG, Methane)",
         "Real-time display of current system output on an LCD screen",
         "Automatic alert system with threshold monitoring",
         "Obstacle Avoidance System",
