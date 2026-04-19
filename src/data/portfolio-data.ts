@@ -24,7 +24,7 @@ export const heroData = {
 };
 
 // ===========================================
-// PROJECTS SECTION
+// PROJECTS SECTIONS
 // ===========================================
 export const projectsData = [
   {
