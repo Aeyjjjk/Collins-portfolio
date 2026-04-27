@@ -8,11 +8,11 @@ export const heroData = {
   skills: [
     "Embedded Systems",
     "Automation",
+    "Flutter Dart",
     "Hardware Engineering",
     "PLC & HMI",
     "IoT",
     // "Robotics",
-    "Flutter Dart",
     "Cybersecurity",
     // "Kali Linux",
   ],
